@@ -12,7 +12,8 @@
         "laravel/framework": "^8.40",
         "laravel/tinker": "^2.5",
         "thiagoalessio/tesseract_ocr": "^2.11",
-        "ext-pcntl": "*"
+        "ext-pcntl": "*",
+        "ext-zip": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
