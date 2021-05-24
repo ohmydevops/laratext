@@ -15,4 +15,5 @@ WORKDIR /app/laratext
 
 RUN composer install
 
-ENTRYPOINT ["php", "artisan" ,"laratext:convert"]
+ENTRYPOINT ["php", "artisan"]
+CMD ["laratext:convert"]
