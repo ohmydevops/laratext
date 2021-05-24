@@ -37,6 +37,6 @@ class ProcessImageHandler extends Controller
             return back()->with('result', 'متاسفانه در پردازش تصویر مشکلی ایجاد شد. مجدد تلاش کنید.');
         }
 
-        return back()->with('result', $result);
+        return back()->with('result', nl2br($result));
     }
 }
