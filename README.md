@@ -11,10 +11,10 @@
 </div>
 
 ```shell
-git clone https://github.com/amirbagh75/laratext laratext
-cd laratext
-composer install
-php8.0 artisan laratext:convert
+root@pc:~$ git clone https://github.com/amirbagh75/laratext laratext
+root@pc:~$ cd laratext
+root@pc:~$ composer install
+root@pc:~$ php8.0 artisan laratext:convert
 ```
 
 <div dir='rtl'>
@@ -26,10 +26,10 @@ php8.0 artisan laratext:convert
 </div>
 
 ```shell
-git clone https://github.com/amirbagh75/laratext laratext
-cd laratext
-docker build -t laratext -f Dockerfile-cli .
-docker run --name laratext --interactive --tty --rm laratext
+root@pc:~$ git clone https://github.com/amirbagh75/laratext laratext
+root@pc:~$ cd laratext
+root@pc:~$ docker build -t laratext -f Dockerfile-cli .
+root@pc:~$ docker run --name laratext --interactive --tty --rm laratext
 ```
 
 <div dir='rtl'>
@@ -39,5 +39,5 @@ docker run --name laratext --interactive --tty --rm laratext
 </div>
 
 ```shell
-docker run --name laratext -it --rm amirbagh75/laratext 
+root@pc:~$ docker run --name laratext -it --rm amirbagh75/laratext 
 ```
