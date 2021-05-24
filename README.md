@@ -10,7 +10,7 @@
 
 </div>
 
-```bash
+```shell
 git clone https://github.com/amirbagh75/laratext laratext
 cd laratext
 composer install
@@ -25,7 +25,7 @@ php8.0 artisan laratext:convert
  
 </div>
 
-```bash
+```shell
 git clone https://github.com/amirbagh75/laratext laratext
 cd laratext
 docker build -t laratext -f Dockerfile-cli .
@@ -38,6 +38,6 @@ docker run --name laratext --interactive --tty --rm laratext
 
 </div>
 
-```bash
+```shell
 docker run --name laratext -it --rm amirbagh75/laratext 
 ```
