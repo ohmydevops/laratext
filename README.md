@@ -41,3 +41,19 @@ root@pc:~$ docker run --name laratext --interactive --tty --rm laratext
 ```shell
 root@pc:~$ docker run --name laratext -it --rm amirbagh75/laratext 
 ```
+
+<div dir='rtl'>
+
+همچنین این پروژه دارای نسخه وب‌اپلیکیشن نیز میباشد. برای مثال میتوانید نسخه داکری‌ آن‌را بدین‌شکل اجرا کنید:
+
+</div>
+
+```shell
+root@pc:~$ docker run --name laratext --rm -p 8080:8000 amirbagh75/laratext serve --host 0.0.0.0
+```
+
+<div dir='rtl'>
+
+سپس کافیست در مرورگر خود وارد آدرس `127.0.0.1:8080` شوید.
+
+</div>
