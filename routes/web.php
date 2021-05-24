@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProcessImageHandler;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Storage;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,5 @@ use Illuminate\Support\Facades\Storage;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'welcome');
+Route::post('/upload', ProcessImageHandler::class)->name('upload');
