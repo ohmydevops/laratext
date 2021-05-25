@@ -45,19 +45,29 @@ root@pc:~$ docker run --name laratext --interactive --tty --rm laratext
 </div>
 
 ```shell
-root@pc:~$ docker run --name laratext -it --rm amirbagh75/laratext 
+root@pc:~$ docker run --name laratext -it --rm amirbagh75/laratext:cli
 ```
 
 <div dir='rtl'>
 
 ---
 
-همچنین این پروژه دارای نسخه وب‌اپلیکیشن نیز میباشد. برای مثال میتوانید نسخه داکری‌ آن‌را بدین‌شکل اجرا کنید:
+همچنین این پروژه دارای نسخه وب‌اپلیکیشن نیز میباشد. برای مثال میتوانید نسخه داکری‌ آن را به وسیله وب‌سرور داخلی PHP، بدین‌شکل اجرا کنید:
 
 </div>
 
 ```shell
-root@pc:~$ docker run --name laratext --rm -p 8080:8000 amirbagh75/laratext serve --host 0.0.0.0
+root@pc:~$ docker run --name laratext --rm -p 8080:8000 amirbagh75/laratext:cli serve --host 0.0.0.0
+```
+
+<div dir='rtl'>
+
+یا اگر قصد دارید در محیط‌های پروداکشنی استفاده کنید، میتوانید نسخه با وب‌سرور آپاچی آن را اجرا کنید:
+
+</div>
+
+```shell
+root@pc:~$ docker run --name laratext --rm -p 8080:8000 amirbagh75/laratext:apache
 ```
 
 <div dir='rtl'>
