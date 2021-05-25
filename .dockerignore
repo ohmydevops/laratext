@@ -25,7 +25,9 @@ phpunit.xml
 README.md
 phpspec.yml
 
-Dockerfile
+Dockerfile-cli
+Dockerfile-supervisord
+Dockerfile-apache
 docker-compose.yml
 run
 run.ps1
