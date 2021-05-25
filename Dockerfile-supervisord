@@ -1,0 +1,24 @@
+FROM php:8.0.6-apache
+
+RUN apt-get update
+RUN apt-get install -y tesseract-ocr
+RUN apt-get install -y tesseract-ocr-fas
+RUN docker-php-ext-install pcntl
+
+RUN apt-get install -y zip libzip-dev
+RUN docker-php-ext-install zip
+
+RUN curl -sS https://getcomposer.org/installer | php -- --version=2.0.9 --install-dir=/usr/local/bin --filename=composer
+
+COPY --chown=www-data:www-data . /var/www/html/
+WORKDIR /var/www/html/
+
+ENV APACHE_DOCUMENT_ROOT /var/www/html/public
+RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
+RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
+RUN a2enmod rewrite
+
+RUN composer install
+RUN php artisan key:generate
+
+USER www-data
