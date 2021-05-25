@@ -13,10 +13,10 @@
 </div>
 
 ```shell
-root@pc:~$ git clone https://github.com/amirbagh75/laratext laratext
-root@pc:~$ cd laratext
-root@pc:~$ composer install
-root@pc:~$ php8.0 artisan laratext:convert
+git clone https://github.com/amirbagh75/laratext laratext
+cd laratext
+composer install
+php8.0 artisan laratext:convert
 ```
 
 <div dir='rtl'>
@@ -30,10 +30,10 @@ root@pc:~$ php8.0 artisan laratext:convert
 </div>
 
 ```shell
-root@pc:~$ git clone https://github.com/amirbagh75/laratext laratext
-root@pc:~$ cd laratext
-root@pc:~$ docker build -t laratext -f Dockerfile-cli .
-root@pc:~$ docker run --name laratext --interactive --tty --rm laratext
+git clone https://github.com/amirbagh75/laratext laratext
+cd laratext
+docker build -t laratext -f Dockerfile-cli .
+docker run --name laratext --interactive --tty --rm laratext
 ```
 
 <div dir='rtl'>
@@ -45,7 +45,7 @@ root@pc:~$ docker run --name laratext --interactive --tty --rm laratext
 </div>
 
 ```shell
-root@pc:~$ docker run --name laratext -it --rm amirbagh75/laratext:cli
+docker run --name laratext -it --rm amirbagh75/laratext:cli
 ```
 
 <div dir='rtl'>
@@ -57,7 +57,7 @@ root@pc:~$ docker run --name laratext -it --rm amirbagh75/laratext:cli
 </div>
 
 ```shell
-root@pc:~$ docker run --name laratext --rm -p 8080:8000 amirbagh75/laratext:cli serve --host 0.0.0.0
+docker run --name laratext --rm -p 8080:8000 amirbagh75/laratext:cli serve --host 0.0.0.0
 ```
 
 <div dir='rtl'>
@@ -67,7 +67,7 @@ root@pc:~$ docker run --name laratext --rm -p 8080:8000 amirbagh75/laratext:cli 
 </div>
 
 ```shell
-root@pc:~$ docker run --name laratext --rm -p 8080:8000 amirbagh75/laratext:apache
+docker run --name laratext --rm -p 8080:8000 amirbagh75/laratext:apache
 ```
 
 <div dir='rtl'>
