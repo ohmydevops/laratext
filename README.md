@@ -67,7 +67,7 @@ docker run --init --name laratext --rm -p 8080:8000 amirbagh75/laratext:cli serv
 </div>
 
 ```shell
-docker run --name laratext --rm -p 8080:8000 amirbagh75/laratext:apache
+docker run --name laratext --rm -p 8080:80 amirbagh75/laratext:apache
 ```
 
 <div dir='rtl'>
