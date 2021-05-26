@@ -1,1 +1,31 @@
-# Comming soon ...
+FROM php:8.0.6-cli
+
+LABEL maintainer="Amirhossein Baghaie"
+
+RUN apt-get -y update
+RUN apt-get -y install supervisor
+RUN apt-get install -y tesseract-ocr
+RUN apt-get install -y tesseract-ocr-fas
+RUN apt-get install -y zip libzip-dev
+RUN docker-php-ext-install zip
+RUN cp -p /usr/share/zoneinfo/Asia/Tehran /etc/localtime
+
+COPY . /app/laratext
+WORKDIR /app/laratext
+
+RUN cp supervisord.conf /etc/supervisor/supervisord.conf
+RUN cp supervisord-laravel-cron.conf /etc/supervisor/conf.d/supervisord-laravel-cron.conf
+RUN cp supervisord-laravel-webserver.conf /etc/supervisor/conf.d/supervisord-laravel-webserver.conf
+
+RUN curl -sS https://getcomposer.org/installer | php -- --version=2.0.9 --install-dir=/usr/local/bin --filename=composer
+
+RUN composer install
+RUN cp .env.example .env
+RUN php artisan key:generate
+
+EXPOSE 80
+
+HEALTHCHECK --start-period=3s --interval=3s --timeout=1s --retries=1 \
+            CMD curl --fail http://localhost:80 || exit 1
+
+ENTRYPOINT ["/usr/bin/supervisord", "-c" , "/etc/supervisor/supervisord.conf"]
