@@ -70,6 +70,19 @@ docker run --init --name laratext --rm -p 8080:8000 amirbagh75/laratext:cli serv
 docker run --name laratext --rm -p 8080:80 amirbagh75/laratext:apache
 ```
 
+---
+
+<div dir='rtl'>
+
+همچنین نسخه کانفیگ‌شده با supervisord هم بدین صورت قابل استفاده میباشد:
+    
+</div>
+
+
+```shell
+docker run --name laratext --rm -p 8080:80 amirbagh75/laratext:supervisord
+```
+
 <div dir='rtl'>
 
 سپس کافیست در مرورگر خود وارد آدرس `127.0.0.1:8080` شوید.
